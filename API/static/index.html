@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Classification App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #file-input {
+      margin-bottom: 10px;
+    }
+
+    #prediction {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Image Classification</h1>
+    <input type="file" id="file-input" accept="image/*">
+    <button id="predict-button">Predict</button>
+    <div id="prediction"></div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('file-input');
+    const predictButton = document.getElementById('predict-button');
+    const predictionDiv = document.getElementById('prediction');
+
+    predictButton.addEventListener('click', async () => {
+      const file = fileInput.files[0];
+      if (!file) {
+        predictionDiv.textContent = "Please select an image.";
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const response = await fetch('http://localhost:8000/predict', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        predictionDiv.textContent = `Predicted class: ${data.predicted_class}, Confidence: ${data.confidence}`;
+      } catch (error) {
+        console.error('Error:', error);
+        predictionDiv.textContent = 'An error occurred. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>
