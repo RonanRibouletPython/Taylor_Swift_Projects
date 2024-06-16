@@ -1,0 +1,10 @@
+services:
+  fastapi:
+    # Building the Docker image for the FastAPI application
+    build: .
+    # Mapping port 8000 on the host machine to port 8000 in the container
+    ports:
+    - "8000:8000"
+    # Mounting a volume at ./static to persist static files
+    volumes:
+    - ./static:/app/static
