@@ -3,3 +3,7 @@ matplotlib
 numpy
 fastapi
 uvicorn
+seaborn
+scipy
+threadpoolctl
+joblib
