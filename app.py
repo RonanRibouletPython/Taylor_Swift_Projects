@@ -8,11 +8,11 @@ import tensorflow as tf
 from fastapi.staticfiles import StaticFiles
 
 # Load the tensorflow model
-PROD_MODEL_PATH = "saved_models/best_model_binary.keras"
+PROD_MODEL_PATH = "saved_models/best_weighted_model.keras"
 
 PROD_MODEL = tf.keras.models.load_model(PROD_MODEL_PATH)
 
-CLASS_NAMES = ["Fearless", "Speak Now"]
+CLASS_NAMES = ["Fearless", "Speak Now", "Lover", "Reputation", "TTPD", "Folkmore"]
 
 app = FastAPI()
 
