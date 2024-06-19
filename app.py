@@ -8,11 +8,11 @@ import tensorflow as tf
 from fastapi.staticfiles import StaticFiles
 
 # Load the tensorflow model
-PROD_MODEL_PATH = "saved_models/best_weighted_model.keras"
+PROD_MODEL_PATH = "saved_models/all_VGG16_models/best_model_weighted_VGG16.keras"
 
 PROD_MODEL = tf.keras.models.load_model(PROD_MODEL_PATH)
 
-CLASS_NAMES = ["Fearless", "Speak Now", "Lover", "Reputation", "TTPD", "Folkmore"]
+CLASS_NAMES = ["Acoustic", "Fearless", "Folkmore", "Lover", "Midnights", "Reputation", "Speak Now"]
 
 app = FastAPI()
 
@@ -34,6 +34,9 @@ async def predict(
         
     # Convert the uploaded file into a numpy array for the prediction
     img = read_file_as_img(await file.read())
+
+    # Resize the image to 256x256
+    img = tf.image.resize(img, [256, 256]) 
 
     # Predict the image classification
     img_batch = np.expand_dims(img, 0)
