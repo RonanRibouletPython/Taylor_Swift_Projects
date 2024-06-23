@@ -12,7 +12,7 @@ PROD_MODEL_PATH = "saved_models/all_VGG16_models/best_model_weighted_VGG16.keras
 
 PROD_MODEL = tf.keras.models.load_model(PROD_MODEL_PATH)
 
-CLASS_NAMES = ["Acoustic", "Fearless", "Folkmore", "Lover", "Midnights", "Reputation", "Speak Now"]
+CLASS_NAMES = ["Acoustic", "Fearless", "Folkmore", "Lover", "Midnights", "Red", "Reputation", "Speak Now", "TTPD"]
 
 app = FastAPI()
 
