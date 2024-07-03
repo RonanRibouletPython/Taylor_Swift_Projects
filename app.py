@@ -8,7 +8,7 @@ import tensorflow as tf
 from fastapi.staticfiles import StaticFiles
 
 # Load the tensorflow model
-PROD_MODEL_PATH = "saved_models/all_VGG16_models/best_model_weighted_RESNET50_getty2.keras"
+PROD_MODEL_PATH = "saved_models/all_VGG16_models/best_model_weighted_RESNET50_getty_aug.keras"
 
 PROD_MODEL = tf.keras.models.load_model(PROD_MODEL_PATH)
 
@@ -36,7 +36,7 @@ async def predict(
     img = read_file_as_img(await file.read())
 
     # Resize the image to 256x256
-    img = tf.image.resize(img, [256, 256]) 
+    img = tf.image.resize(img, [384, 384]) 
 
     # Predict the image classification
     img_batch = np.expand_dims(img, 0)
