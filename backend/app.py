@@ -8,7 +8,7 @@ import tensorflow as tf
 from fastapi.staticfiles import StaticFiles
 
 # Load the tensorflow model
-PROD_MODEL_PATH = "saved_models/all_VGG16_models/best_model_weighted_RESNET50_getty_aug.keras"
+PROD_MODEL_PATH = "best_model_weighted_RESNET50_getty_aug.keras"
 
 PROD_MODEL = tf.keras.models.load_model(PROD_MODEL_PATH)
 
@@ -16,7 +16,7 @@ CLASS_NAMES = ["1989", "Acoustic", "Fearless", "Folkmore", "Lover", "Midnights",
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+#app.mount("/static", StaticFiles(directory="C:/Users/Ronan/Documents/ML/Taylor_Swift_Projects/CNN/static"), name="static")
 
 @app.get("/ping")
 async def read_root():

@@ -14,14 +14,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copying the current directory contents into the container, 
 # which includes the application code and other necessary files
-COPY . .
+COPY . /app
 
 # Exposing port 8000 for the application to listen on, 
 # allowing incoming requests to be received by the container
 EXPOSE 8000
 
 # Add uvicorn to the PATH
-ENV PATH="/usr/local/bin:$PATH"
+#ENV PATH="/usr/local/bin:$PATH"
 
 # Running the Uvicorn ASGI server with the main application, 
 # listening on host 0.0.0.0 and port 8000, with auto-reload enabled 
