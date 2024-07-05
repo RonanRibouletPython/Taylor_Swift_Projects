@@ -1,8 +1,8 @@
-version: "3.9"  # Optional: Specify a Docker Compose version
+version: "3.9"
 
 services:
   frontend:
-    build: ./frontend  # Assuming 'frontend' contains your Dockerfile
+    build: ./frontend 
     ports:
       - "8501:8501" 
     depends_on:
@@ -15,7 +15,7 @@ services:
     container_name: frontend
 
   backend:
-    build: ./backend   # Assuming 'backend' contains your Dockerfile
+    build: ./backend 
     ports:
       - "8000:8000"
     volumes:
