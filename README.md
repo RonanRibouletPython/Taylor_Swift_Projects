@@ -1,8 +1,7 @@
 
 # The Eras Tour Image/Video classification (Taylor's version)
-<div align="center">
-  ![Alt text](https://i.pinimg.com/736x/5d/07/d1/5d07d10b59ff9f4616fc87b86ee0b3d9.jpg)
-</div>
+
+![Alt text](https://i.pinimg.com/736x/5d/07/d1/5d07d10b59ff9f4616fc87b86ee0b3d9.jpg)
 
 This github repository hosts a computer vision Taylor Swift's themed image/video classification project.\
 This project is inspired by the love of my girlfriend for this amazing artist.\
