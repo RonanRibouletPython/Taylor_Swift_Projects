@@ -1,7 +1,8 @@
 
 # The Eras Tour Image/Video classification (Taylor's version)
-
-![Alt text](https://i.pinimg.com/736x/5d/07/d1/5d07d10b59ff9f4616fc87b86ee0b3d9.jpg)
+<p align="center">
+  ![Alt text](https://i.pinimg.com/736x/5d/07/d1/5d07d10b59ff9f4616fc87b86ee0b3d9.jpg)
+</p>
 
 This github repository hosts a computer vision Taylor Swift's themed image/video classification project.\
 This project is inspired by the love of my girlfriend for this amazing artist.\
@@ -29,7 +30,7 @@ When I went to Taylor's concert in Lyon back in march I had the idea to create a
     <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="40" height="40"/> 
   </a>   
   <a href="https://albumentations.ai/" target="_blank" rel="noreferrer">
-    <img src="https://albumentations.ai/docs/logo.svg" alt="Albumentations" width="40" height="40"/> 
+    <img src="https://repository-images.githubusercontent.com/136265021/094cf680-b83f-11e9-9512-e4b538ed8e4d" alt="Albumentations" width="40" height="40"/> 
   </a>   
   <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="40" height="40"/> 
