@@ -2,7 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 import uvicorn 
 import tensorflow as tf
 import numpy as np
-from backend.utils import (capture_random_frames,
+from utils import (capture_random_frames,
                    delete_files_in_directory,
                    count_files_in_directory,
                    read_file_as_img
@@ -53,7 +53,7 @@ async def predict(
         buffer.write(await file.read())
 
     output_folder = "screenshots"
-    num_captures = 10  # Capture a number of screenshots
+    num_captures = 12  # Capture a number of screenshots
 
     capture_random_frames(temp_video_path, output_folder, num_captures)
 
