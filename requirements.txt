@@ -9,3 +9,4 @@ threadpoolctl
 joblib
 albumentations
 streamlit
+opencv-python

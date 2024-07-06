@@ -1,14 +1,14 @@
 from fastapi import FastAPI, UploadFile, File
 import uvicorn 
-import tensorflow as tf
 import numpy as np
-from backend.utils import (capture_random_frames,
-                   delete_files_in_directory,
-                   count_files_in_directory,
-                   read_file_as_img
-                   )
+from io import BytesIO
+from PIL import Image
+import tensorflow as tf
 import os
-    
+
+from fastapi.staticfiles import StaticFiles
+from backend.utils import capture_random_frames, delete_files_in_directory, count_files_in_directory
+
 # Load the tensorflow model
 PROD_MODEL_PATH = "best_model_weighted_RESNET50_getty_aug.keras"
 
@@ -18,37 +18,23 @@ CLASS_NAMES = ["1989", "Acoustic", "Fearless", "Folkmore", "Lover", "Midnights",
 
 app = FastAPI()
 
+app.mount("/static", StaticFiles(directory="C:/Users/Ronan/Documents/ML/Taylor_Swift_Projects/CNN/static"), name="static")
+
 @app.get("/ping")
 async def read_root():
     return "Hello World"
+
+def read_file_as_img(data)-> np.ndarray:
+    image = np.array(Image.open(BytesIO(data)))
+
+    return image
 
 @app.post("/predict")
 async def predict(
     file: UploadFile = File(...)
 ):
-    # process image
-    if file.content_type.startswith("image/"): 
-        # Convert the uploaded file into a numpy array for the prediction
-        img = read_file_as_img(await file.read())
 
-        # Resize the image to 256x256
-        img = tf.image.resize(img, [384, 384]) 
-
-        # Predict the image classification
-        img_batch = np.expand_dims(img, 0)
-        predictions = PROD_MODEL.predict(img_batch)
-
-        predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
-        confidence = np.max(predictions[0])
-
-        return{
-            "predicted_class": predicted_class,
-            "confidence": float(confidence)
-        }
-    
-    # Process as video
-    elif file.content_type.startswith("video/"):
-        temp_video_path = f"temp_{file.filename}"
+    temp_video_path = f"temp_{file.filename}"
     with open(temp_video_path, "wb") as buffer:
         buffer.write(await file.read())
 

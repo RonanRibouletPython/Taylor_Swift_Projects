@@ -1,77 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Image Classification App</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    #container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    #file-input {
-      margin-bottom: 10px;
-    }
-
-    #prediction {
-      margin-top: 20px;
-      font-size: 1.2em;
-    }
-  </style>
-</head>
-<body>
-  <div id="container">
-    <h1>Image Classification</h1>
-    <input type="file" id="file-input" accept="image/*">
-    <button id="predict-button">Predict</button>
-    <div id="prediction"></div>
-  </div>
-
-  <script>
-    const fileInput = document.getElementById('file-input');
-    const predictButton = document.getElementById('predict-button');
-    const predictionDiv = document.getElementById('prediction');
-
-    predictButton.addEventListener('click', async () => {
-      const file = fileInput.files[0];
-      if (!file) {
-        predictionDiv.textContent = "Please select an image.";
-        return;
-      }
-
-      const formData = new FormData();
-      formData.append('file', file);
-
-      try {
-        const response = await fetch('http://localhost:8000/predict', {
-          method: 'POST',
-          body: formData
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift Era Classifier</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        const data = await response.json();
-        predictionDiv.textContent = `Predicted class: ${data.predicted_class}, Confidence: ${data.confidence}`;
-      } catch (error) {
-        console.error('Error:', error);
-        predictionDiv.textContent = 'An error occurred. Please try again.';
-      }
-    });
-  </script>
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Taylor Swift Era Classifier</h1>
+        <p>Upload a video to determine its era!</p>
+        <input type="file" id="videoUpload" accept="video/*">
+        <label for="videoUpload">Upload Video</label>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const videoUpload = document.getElementById('videoUpload');
+        const resultDiv = document.getElementById('result');
+
+        videoUpload.addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            resultDiv.innerHTML = 'Predicting...'; 
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                resultDiv.innerHTML = `Predicted Era: <strong>${data.predicted_class}</strong>`;
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.innerHTML = 'An error occurred during prediction.';
+            }
+        });
+    </script>
 </body>
 </html>
