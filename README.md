@@ -52,6 +52,7 @@ When I went to Taylor's concert in Lyon back in march I had the idea to create a
     </a> 
   </li>
 </ul>
+
 # Roadmap
 
 The project has had a lot of iterations since its debut (album) in March 2024\
