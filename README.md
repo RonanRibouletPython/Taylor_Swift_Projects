@@ -9,32 +9,48 @@ When I went to Taylor's concert in Lyon back in march I had the idea to create a
 
 # Built with
 
-<p align="center">
-  <a href="https://www.python.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/> 
-  </a>   
-  <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" width="40" height="40"/> 
-  </a>   
-  <a href="https://keras.io/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/keras/keras-original.svg" alt="Keras" width="40" height="40"/> 
-  </a>   
-  <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" alt="FastAPI" width="40" height="40"/> 
-  </a>   
-  <a href="https://streamlit.io/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/streamlit/streamlit-original.svg" alt="Streamlit" width="40" height="40"/> 
-  </a>   
-  <a href="https://opencv.org/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="40" height="40"/> 
-  </a>   
-  <a href="https://albumentations.ai/" target="_blank" rel="noreferrer">
-    <img src="https://repository-images.githubusercontent.com/136265021/094cf680-b83f-11e9-9512-e4b538ed8e4d" alt="Albumentations" width="40" height="40"/> 
-  </a>   
-  <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="40" height="40"/> 
-  </a> 
-</p>
+<ul>
+  <li>
+    <a href="https://www.python.org/" target="_blank" rel="noreferrer">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/> Python
+    </a>
+  </li> 
+  <li>
+    <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer">
+      <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" width="40" height="40"/> TensorFlow
+    </a>
+  </li> 
+  <li>
+    <a href="https://keras.io/" target="_blank" rel="noreferrer">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/keras/keras-original.svg" alt="Keras" width="40" height="40"/> Keras
+    </a> 
+  </li>
+  <li>
+    <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" alt="FastAPI" width="40" height="40"/> FastAPI
+    </a> 
+  </li>
+  <li>
+    <a href="https://streamlit.io/" target="_blank" rel="noreferrer">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/streamlit/streamlit-original.svg" alt="Streamlit" width="40" height="40"/> Streamlit
+    </a> 
+  </li>
+  <li>
+    <a href="https://opencv.org/" target="_blank" rel="noreferrer">
+      <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="40" height="40"/> OpenCV
+    </a> 
+  </li>
+  <li>
+    <a href="https://albumentations.ai/" target="_blank" rel="noreferrer">
+      <img src="https://repository-images.githubusercontent.com/136265021/094cf680-b83f-11e9-9512-e4b538ed8e4d" alt="Albumentations" width="40" height="40"/> Albumentations
+    </a> 
+  </li>
+  <li>
+    <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="40" height="40"/> Docker
+    </a> 
+  </li>
+</ul>
 
 # Roadmap
 
